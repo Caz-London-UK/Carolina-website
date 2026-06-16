@@ -35,9 +35,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 /* HERO */
 #hero{min-height:100vh;display:grid;grid-template-columns:55% 45%;padding-top:60px}
 .hero-img{position:relative;overflow:hidden;background:var(--ink)}
-.hero-img-inner{width:100%;height:100%;min-height:500px;background:linear-gradient(170deg,#1a120a 0%,#2e1a0e 55%,#4a2810 100%);display:flex;align-items:flex-end;justify-content:center;padding-bottom:2.5rem}
-.hero-img-hint{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.15)}
-.hero-stripe{position:absolute;top:0;left:0;width:5px;height:100%;background:var(--orange)}
+.hero-stripe{position:absolute;top:0;left:0;width:5px;height:100%;background:var(--orange);z-index:2}
 .hero-content{display:flex;flex-direction:column;justify-content:center;padding:7% 6% 7% 5%;background:var(--ivory)}
 .hero-eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:2rem}
 .hero-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3rem,5.5vw,5.2rem);line-height:.92;color:var(--ink);margin-bottom:2rem;letter-spacing:-.02em}
@@ -65,7 +63,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 #about{background:var(--white)}
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .about-headline{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:2rem}
-.about-headline em{color:var(--orange);font-style:normal}
 .about-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
 .pill{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--mid);padding:.35rem .9rem}
 .about-facts{border-top:1px solid var(--rule)}
@@ -83,6 +80,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .evo-subtitle{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:500;color:var(--mid);margin-top:1rem;margin-bottom:4rem;max-width:620px;line-height:1.5}
 .wave-scroll{width:100%;overflow-x:auto;padding-bottom:1rem}
 .wave-svg{display:block;min-width:1000px}
+
+/* MOBILE TIMELINE */
+.mobile-timeline{display:none;flex-direction:column;gap:0;border-left:2px solid var(--orange);padding-left:1.5rem;margin-top:2rem}
+.mt-item{position:relative;padding-bottom:2.5rem}
+.mt-item:last-child{padding-bottom:0}
+.mt-item::before{content:'';position:absolute;left:-1.95rem;top:4px;width:10px;height:10px;border-radius:50%;background:var(--orange)}
+.mt-year{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.mt-title{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;color:var(--orange);margin-bottom:.4rem;line-height:1.3}
+.mt-desc{font-size:.85rem;color:var(--mid);line-height:1.6}
 
 /* SKILLS */
 #skills-expanded{background:var(--white)}
@@ -102,8 +108,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 
 /* IMPACT */
 #impact{background:var(--ivory-dark)}
-#impact .sec-label{color:var(--orange)}
-#impact .sec-title{color:var(--ink)}
 .cases{display:flex;flex-direction:column;gap:3px;margin-top:4rem}
 .case{background:var(--white);padding:3.5rem;border:1px solid var(--rule)}
 .case-header{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule)}
@@ -157,15 +161,44 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
 .footer-l{font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;color:rgba(255,255,255,.25)}
 .footer-r{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.15)}
 
+/* RESPONSIVE */
 @media(max-width:960px){
   #hero{grid-template-columns:1fr}
-  .hero-img{min-height:55vw}
+  .hero-img{min-height:70vw}
   .about-layout,.contact-inner{grid-template-columns:1fr;gap:3rem}
   .case-steps{grid-template-columns:1fr 1fr}
   .values-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
   .case-header{grid-template-columns:1fr}
   .case-kpi{text-align:left}
+  .sec{padding:70px 5%}
+  .sec-title{font-size:2rem}
+  .hero-name{font-size:2.8rem}
+  .hero-content{padding:8% 6%}
+  .skills-layout{grid-template-columns:1fr}
+  .evo-subtitle{font-size:.9rem}
+}
+@media(max-width:600px){
+  .case-steps{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr}
+  .hero-name{font-size:2.2rem}
+  .sec-title{font-size:1.6rem}
+  .case-title{font-size:1.2rem}
+  .case-kpi-num{font-size:2.2rem}
+  .contact-inner{gap:2rem}
+  .contact-photo{width:80px;height:80px}
+  .about-pills{gap:.4rem}
+  .pill{font-size:.65rem}
+  nav{padding:0 4%}
+  .nav-name{font-size:.78rem}
+  .nav-cv{padding:.35rem .8rem;font-size:.65rem}
+  .wave-scroll{display:none}
+  .mobile-timeline{display:flex}
+  .sec{padding:60px 4%}
+  #contact{padding:60px 4%}
+  .skills-table{font-size:.75rem}
+  .skills-table th{font-size:.6rem;padding:.7rem .6rem}
+  .skills-table td{padding:.8rem .6rem}
 }
 </style>
 </head>
@@ -233,22 +266,10 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
         </div>
       </div>
       <div class="about-points">
-        <div class="about-point">
-          <div class="about-point-num">01</div>
-          <div class="about-point-text">Shaped by curiosity, emotional intelligence, and a genuine interest in how people think, work, and grow. I navigate ambiguity with humour, good questions, and a <strong>steady, thoughtful approach</strong> that helps teams move forward with confidence.</div>
-        </div>
-        <div class="about-point">
-          <div class="about-point-num">02</div>
-          <div class="about-point-text">I lead with the curiosity of a perpetual learner — comfortable being a beginner in new territories and valuing the process of growth as much as the final result. Energised by purposeful work, smart collaborators, and <strong>helping people stretch into roles they didn't initially see for themselves.</strong></div>
-        </div>
-        <div class="about-point">
-          <div class="about-point-num">03</div>
-          <div class="about-point-text">Influenced by art, culture, travel, and the brilliant characters in my life — a wide lens, a quick wit, and an instinct for connection that I bring into every room.</div>
-        </div>
-        <div class="about-point">
-          <div class="about-point-num">04</div>
-          <div class="about-point-text">I've learned that staying open and curious is more effective than being certain, especially when navigating the friction of global teams. Recognised for a <strong>structured, collaborative approach</strong> — partnering with leadership to define hiring needs, elevate standards, and ensure long-term alignment between talent and business goals.</div>
-        </div>
+        <div class="about-point"><div class="about-point-num">01</div><div class="about-point-text">Shaped by curiosity, emotional intelligence, and a genuine interest in how people think, work, and grow. I navigate ambiguity with humour, good questions, and a <strong>steady, thoughtful approach</strong> that helps teams move forward with confidence.</div></div>
+        <div class="about-point"><div class="about-point-num">02</div><div class="about-point-text">I lead with the curiosity of a perpetual learner — comfortable being a beginner in new territories and valuing the process of growth as much as the final result. Energised by purposeful work, smart collaborators, and <strong>helping people stretch into roles they didn't initially see for themselves.</strong></div></div>
+        <div class="about-point"><div class="about-point-num">03</div><div class="about-point-text">Influenced by art, culture, travel, and the brilliant characters in my life — a wide lens, a quick wit, and an instinct for connection that I bring into every room.</div></div>
+        <div class="about-point"><div class="about-point-num">04</div><div class="about-point-text">I've learned that staying open and curious is more effective than being certain, especially when navigating the friction of global teams. Recognised for a <strong>structured, collaborative approach</strong> — partnering with leadership to define hiring needs, elevate standards, and ensure long-term alignment between talent and business goals.</div></div>
       </div>
     </div>
   </div>
@@ -262,62 +283,52 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
       <h2 class="sec-title">How My Work Evolved</h2>
     </div>
     <p class="evo-subtitle">An evolution from filling roles to shaping the people-centred systems that help teams thrive.</p>
+    <!-- Mobile timeline -->
+    <div class="mobile-timeline">
+      <div class="mt-item"><div class="mt-year">2009</div><div class="mt-title">Learning to Operate at Scale</div><div class="mt-desc">High-stakes, high-volume environments where quality couldn't slip.</div></div>
+      <div class="mt-item"><div class="mt-year">2015</div><div class="mt-title">Choosing Depth Over Title</div><div class="mt-desc">Moving into Creative and Digital Product to deepen HR and Talent experience.</div></div>
+      <div class="mt-item"><div class="mt-year">2018</div><div class="mt-title">Delivery to Ownership</div><div class="mt-desc">Owning the relationships, processes and structures that made hiring scalable.</div></div>
+      <div class="mt-item"><div class="mt-year">2021</div><div class="mt-title">Scaling Without Losing Standards</div><div class="mt-desc">Protecting candidate experience and cultural consistency under intense delivery demands.</div></div>
+      <div class="mt-item"><div class="mt-year">2023</div><div class="mt-title">Stabilising Force in Complexity</div><div class="mt-desc">Navigating global matrices, restructuring and offshore delivery with calm authority.</div></div>
+    </div>
+    <!-- Desktop wave -->
     <div class="wave-scroll">
       <svg class="wave-svg" viewBox="0 0 1080 500" width="1080" height="500" xmlns="http://www.w3.org/2000/svg">
-
-        <!-- Annotation columns — text above and below, no overlap with curve -->
-        <!-- Node 1: x=80, curve y≈390 -->
-        <!-- Label below curve -->
-        <text x="80" y="430" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">LEARNING TO</text>
-        <text x="80" y="445" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">OPERATE AT SCALE</text>
-        <text x="80" y="463" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">High-stakes, high-volume</text>
-        <text x="80" y="477" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">environments where quality</text>
-        <text x="80" y="491" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">couldn't slip.</text>
-
-        <!-- Node 2: x=280, curve y≈310 — label above -->
         <text x="280" y="60" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">CHOOSING</text>
         <text x="280" y="75" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">DEPTH OVER TITLE</text>
         <text x="280" y="95" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">Moving into Creative and Digital</text>
         <text x="280" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">Product to deepen HR and</text>
         <text x="280" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">Talent experience.</text>
-        <!-- connector line -->
         <line x1="280" y1="132" x2="280" y2="295" stroke="#E0D5C8" stroke-width="1" stroke-dasharray="4,4"/>
-
-        <!-- Node 3: x=480, curve y≈235 — label below -->
         <text x="480" y="360" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">DELIVERY TO</text>
         <text x="480" y="375" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">OWNERSHIP</text>
         <text x="480" y="395" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">Owning the relationships,</text>
         <text x="480" y="410" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">processes and structures that</text>
         <text x="480" y="425" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">made hiring scalable.</text>
         <line x1="480" y1="242" x2="480" y2="352" stroke="#E0D5C8" stroke-width="1" stroke-dasharray="4,4"/>
-
-        <!-- Node 4: x=700, curve y≈165 — label above -->
         <text x="700" y="60" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">SCALING WITHOUT</text>
         <text x="700" y="75" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">LOSING STANDARDS</text>
         <text x="700" y="95" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">Protecting candidate experience</text>
         <text x="700" y="110" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">and cultural consistency under</text>
         <text x="700" y="125" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">intense delivery demands.</text>
         <line x1="700" y1="132" x2="700" y2="153" stroke="#E0D5C8" stroke-width="1" stroke-dasharray="4,4"/>
-
-        <!-- Node 5: x=920, curve y≈105 — label below -->
         <text x="920" y="290" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">STABILISING FORCE</text>
         <text x="920" y="305" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">IN COMPLEXITY</text>
         <text x="920" y="325" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">Navigating global matrices,</text>
         <text x="920" y="340" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">restructuring, and offshore</text>
         <text x="920" y="355" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">delivery with calm authority.</text>
         <line x1="920" y1="112" x2="920" y2="282" stroke="#E0D5C8" stroke-width="1" stroke-dasharray="4,4"/>
-
-        <!-- THE CURVE — carefully positioned clear of all labels -->
         <path d="M 80 390 C 140 385, 200 340, 280 300 C 360 260, 400 250, 480 235 C 560 220, 630 190, 700 160 C 770 130, 840 115, 920 108 C 970 104, 1020 96, 1060 80" fill="none" stroke="#E8622A" stroke-width="2.5" stroke-linecap="round"/>
-
-        <!-- Dots -->
         <circle cx="80" cy="390" r="7" fill="#E8622A"/>
         <circle cx="280" cy="300" r="7" fill="#E8622A"/>
         <circle cx="480" cy="235" r="7" fill="#E8622A"/>
         <circle cx="700" cy="160" r="7" fill="#E8622A"/>
         <circle cx="920" cy="108" r="7" fill="#E8622A"/>
-
-        <!-- Year labels near dots -->
+        <text x="80" y="430" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">LEARNING TO</text>
+        <text x="80" y="445" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">OPERATE AT SCALE</text>
+        <text x="80" y="463" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">High-stakes, high-volume</text>
+        <text x="80" y="477" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">environments where quality</text>
+        <text x="80" y="491" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" fill="#9C8C80">couldn't slip.</text>
         <text x="80" y="410" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#C0B0A4">2009</text>
         <text x="280" y="317" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#C0B0A4">2015</text>
         <text x="480" y="252" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#C0B0A4">2018</text>
@@ -350,61 +361,37 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
           <tr>
             <td>Head of Recruitment &amp; Training<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Lola Event Staffing · 2009–2014</span></td>
             <td class="scope-cell">UK-wide · High-volume · Time-critical</td>
-            <td><ul>
-              <li>Led large recruitment and training teams through intense, time-critical delivery.</li>
-              <li>Designed high-volume hiring frameworks under zero-failure conditions.</li>
-              <li>Delivered staffing for the London 2012 Olympics.</li>
-            </ul></td>
+            <td><ul><li>Led large recruitment and training teams through intense, time-critical delivery.</li><li>Designed high-volume hiring frameworks under zero-failure conditions.</li><li>Delivered staffing for the London 2012 Olympics.</li></ul></td>
             <td class="inf-cell">Leadership through direct execution.</td>
           </tr>
           <tr>
             <td>HR Coordinator<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Cheil UK · 2015–2016</span></td>
             <td class="scope-cell">Regional · Post-acquisition · Cross-border</td>
-            <td><ul>
-              <li>Learned HR and recruitment mechanics hands-on in a new industry.</li>
-              <li>Built trust with leaders by understanding how teams actually worked.</li>
-              <li>Stepped beyond remit to close operational gaps.</li>
-            </ul></td>
+            <td><ul><li>Learned HR and recruitment mechanics hands-on in a new industry.</li><li>Built trust with leaders by understanding how teams actually worked.</li><li>Stepped beyond remit to close operational gaps.</li></ul></td>
             <td class="inf-cell">Reliability and relationship building.</td>
           </tr>
           <tr>
             <td>HR Advisor &amp; Talent Manager<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Foolproof · Zensar · 2018–2021</span></td>
             <td class="scope-cell">Regional · Dual-function · Agency elimination</td>
-            <td><ul>
-              <li>Moved from execution to ownership across HR and Talent.</li>
-              <li>Designed sustainable sourcing models that replaced short-term fixes.</li>
-              <li>Influenced stakeholders towards structured, long-term growth.</li>
-            </ul></td>
+            <td><ul><li>Moved from execution to ownership across HR and Talent.</li><li>Designed sustainable sourcing models that replaced short-term fixes.</li><li>Influenced stakeholders towards structured, long-term growth.</li></ul></td>
             <td class="inf-cell">Process design and persuasion.</td>
           </tr>
           <tr>
             <td>Talent Partner — Growth &amp; Multi-Discipline<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Foolproof · 2021–2022</span></td>
             <td class="scope-cell">Multi-discipline · Sole responsibility · Competing priorities</td>
-            <td><ul>
-              <li>Owned end-to-end hiring as sole practitioner across multiple disciplines.</li>
-              <li>Translated market intelligence into scarcity-led strategy that shaped sustainable team structures.</li>
-              <li>Shifted from reactive recruitment to proactive, market-led talent pipelining.</li>
-            </ul></td>
+            <td><ul><li>Owned end-to-end hiring as sole practitioner across multiple disciplines.</li><li>Translated market intelligence into scarcity-led strategy that shaped sustainable team structures.</li><li>Shifted from reactive recruitment to proactive, market-led talent pipelining.</li></ul></td>
             <td class="inf-cell">Technical judgement and market foresight.</td>
           </tr>
           <tr>
             <td>Senior Talent Partner — Candidate Experience<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Foolproof · Indigo Slate · Zensar · 2022–2023</span></td>
             <td class="scope-cell">Multi-region · Scale, systems, people</td>
-            <td><ul>
-              <li>Protected quality and candidate experience under sustained scaling pressure.</li>
-              <li>Humanised recruitment data to empower hiring managers with actionable insights.</li>
-              <li>Mentored peers through leadership change.</li>
-            </ul></td>
+            <td><ul><li>Protected quality and candidate experience under sustained scaling pressure.</li><li>Humanised recruitment data to empower hiring managers with actionable insights.</li><li>Mentored peers through leadership change.</li></ul></td>
             <td class="inf-cell">Stewardship, peer and stakeholder coaching.</td>
           </tr>
           <tr>
             <td>Senior Talent Partner — Global Enablement<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Foolproof · Zensar · 2023–2026</span></td>
             <td class="scope-cell">Multi-region · High ambiguity · Staff-aug · Global matrices</td>
-            <td><ul>
-              <li>Operated effectively in ambiguity, often without formal briefs.</li>
-              <li>Built proactive, multi-region talent pipelines ensuring resource readiness across diverse geographies.</li>
-              <li>Acted as institutional anchor during restructuring.</li>
-            </ul></td>
+            <td><ul><li>Operated effectively in ambiguity, often without formal briefs.</li><li>Built proactive, multi-region talent pipelines ensuring resource readiness across diverse geographies.</li><li>Acted as institutional anchor during restructuring.</li></ul></td>
             <td class="inf-cell">Trust and calm authority.</td>
           </tr>
         </tbody>
@@ -421,7 +408,6 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
       <h2 class="sec-title">Measurable Impact</h2>
     </div>
     <div class="cases">
-
       <div class="case">
         <div class="case-header">
           <div>
@@ -429,33 +415,13 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
             <h3 class="case-title">Scaling Global Staff-Augmentation<br>Reducing "Time-to-Land" from 6 to 3 weeks<br>with a 45-candidate global pipeline</h3>
             <p class="case-challenge">In a global staff-aug model, a 6-week "Time-to-Land" created significant revenue risk. The business required a system to respond to client demands in days, not weeks, without compromising technical rigour.</p>
           </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">6→3</div>
-            <div class="case-kpi-label">weeks · time-to-land</div>
-          </div>
+          <div class="case-kpi"><div class="case-kpi-num">6→3</div><div class="case-kpi-label">weeks · time-to-land</div></div>
         </div>
         <div class="case-steps">
-          <div class="cs">
-            <div class="cs-n">01</div><div class="cs-t">Strategic Inventory Modelling</div>
-            <div class="cs-lbl">Action</div><div class="cs-p">Moved from reactive hiring to a "Strategic Inventory" model, calculating a 45-candidate global bench to absorb 25% monthly churn.</div>
-            <div class="cs-lbl">Result</div><div class="cs-p">Established a predictable, data-driven roadmap for sourcing that anticipated regional demand spikes before they occurred.</div>
-          </div>
-          <div class="cs">
-            <div class="cs-n">02</div><div class="cs-t">Technical Practice Integration</div>
-            <div class="cs-lbl">Action</div><div class="cs-p">Partnered with Design Leadership to decouple technical interviews from specific vacancies, creating a "continuous assessment" rhythm.</div>
-            <div class="cs-lbl">Result</div><div class="cs-p">Created a pool of pre-cleared talent, allowing the business to present vetted profiles to clients within 48 hours of a request.</div>
-          </div>
-          <div class="cs">
-            <div class="cs-n">03</div><div class="cs-t">Operational Orchestration</div>
-            <div class="cs-lbl">Action</div><div class="cs-p">Scaled the process by coaching a Team Assistant to manage high-volume availability checks and time-zone scheduling.</div>
-            <div class="cs-lbl">Result</div><div class="cs-p">Eliminated pipeline decay and administrative bottlenecks, ensuring the bench remained 100% actionable 24/7.</div>
-          </div>
-          <div class="cs">
-            <div class="cs-n">04</div><div class="cs-t">Results: Global Placement Velocity</div>
-            <div class="cs-lbl">Efficiency</div><div class="cs-p">Reduced average "Time-to-Land" from 6 weeks to 3 weeks across all global regions.</div>
-            <div class="cs-lbl">Scale</div><div class="cs-p">Maintained a stable global bench of 45 cleared profiles despite high churn and shifting market availability.</div>
-            <div class="cs-lbl">Commercial Growth</div><div class="cs-p">Delivered a consistent flow of 4+ placements per month, supporting predictable revenue and project continuity.</div>
-          </div>
+          <div class="cs"><div class="cs-n">01</div><div class="cs-t">Strategic Inventory Modelling</div><div class="cs-lbl">Action</div><div class="cs-p">Moved from reactive hiring to a "Strategic Inventory" model, calculating a 45-candidate global bench to absorb 25% monthly churn.</div><div class="cs-lbl">Result</div><div class="cs-p">Established a predictable, data-driven roadmap for sourcing that anticipated regional demand spikes before they occurred.</div></div>
+          <div class="cs"><div class="cs-n">02</div><div class="cs-t">Technical Practice Integration</div><div class="cs-lbl">Action</div><div class="cs-p">Partnered with Design Leadership to decouple technical interviews from specific vacancies, creating a "continuous assessment" rhythm.</div><div class="cs-lbl">Result</div><div class="cs-p">Created a pool of pre-cleared talent, allowing the business to present vetted profiles to clients within 48 hours of a request.</div></div>
+          <div class="cs"><div class="cs-n">03</div><div class="cs-t">Operational Orchestration</div><div class="cs-lbl">Action</div><div class="cs-p">Scaled the process by coaching a Team Assistant to manage high-volume availability checks and time-zone scheduling.</div><div class="cs-lbl">Result</div><div class="cs-p">Eliminated pipeline decay and administrative bottlenecks, ensuring the bench remained 100% actionable 24/7.</div></div>
+          <div class="cs"><div class="cs-n">04</div><div class="cs-t">Results: Global Placement Velocity</div><div class="cs-lbl">Efficiency</div><div class="cs-p">Reduced average "Time-to-Land" from 6 weeks to 3 weeks across all global regions.</div><div class="cs-lbl">Scale</div><div class="cs-p">Maintained a stable global bench of 45 cleared profiles despite high churn and shifting market availability.</div><div class="cs-lbl">Commercial Growth</div><div class="cs-p">Delivered a consistent flow of 4+ placements per month, supporting predictable revenue and project continuity.</div></div>
         </div>
         <div class="case-refl">
           <div class="refl-lbl">Reflection</div>
@@ -463,7 +429,6 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
           <div class="refl-q">Speed should never cost us our standards. I ensure that even at a global scale, the process remains human-centred, keeping candidates engaged and the boutique quality intact.</div>
         </div>
       </div>
-
       <div class="case">
         <div class="case-header">
           <div>
@@ -471,33 +436,13 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
             <h3 class="case-title">Transforming Hiring Economics<br>From "Growth Tax" to £300k+ Annual Savings</h3>
             <p class="case-challenge">Upon joining a 120-person boutique agency, I identified that a 20% agency fee model was becoming a growth tax. With 15–20% attrition and rising senior salaries, the business was spending heavily on reactive replacements rather than strategic growth.</p>
           </div>
-          <div class="case-kpi">
-            <div class="case-kpi-num">£300k+</div>
-            <div class="case-kpi-label">annual savings</div>
-          </div>
+          <div class="case-kpi"><div class="case-kpi-num">£300k+</div><div class="case-kpi-label">annual savings</div></div>
         </div>
         <div class="case-steps">
-          <div class="cs">
-            <div class="cs-n">01</div><div class="cs-t">Commercial Negotiation (The Quick Win)</div>
-            <div class="cs-lbl">Action</div><div class="cs-p">Negotiated standard vendor terms from 20% down to 15%.</div>
-            <div class="cs-lbl">Result</div><div class="cs-p">£45k saved in Year 1, establishing immediate credibility and proving that Talent Operations could actively protect the P&amp;L.</div>
-          </div>
-          <div class="cs">
-            <div class="cs-n">02</div><div class="cs-t">Building Internal Engines (The Cultural Shift)</div>
-            <div class="cs-lbl">Action</div><div class="cs-p">Revived a stagnant internal referral programme and pivoted to organic, network-led sourcing with a minimal budget.</div>
-            <div class="cs-lbl">Result</div><div class="cs-p">Generated 28 leads and a 25% conversion rate, moving the culture away from agency-first thinking.</div>
-          </div>
-          <div class="cs">
-            <div class="cs-n">03</div><div class="cs-t">Scaling the Direct Model (The Ownership)</div>
-            <div class="cs-lbl">Action</div><div class="cs-p">As headcount grew to 150+ and attrition reached 20%, I fully embedded a direct-sourcing model as a sole practitioner.</div>
-            <div class="cs-lbl">Result</div><div class="cs-p">Eliminated agency reliance for the majority of roles, supporting 30+ hires annually.</div>
-          </div>
-          <div class="cs">
-            <div class="cs-n">04</div><div class="cs-t">The Bottom Line: Strategic Value Driver</div>
-            <div class="cs-lbl">Financial Impact</div><div class="cs-p">Delivered £300k+ in annual cost avoidance by replacing high-fee agencies with internal pipelines.</div>
-            <div class="cs-lbl">Operational Outcome</div><div class="cs-p">Enhanced cultural durability and candidate quality by leveraging internal referrals and organic network — ensuring hires were aligned with the agency's boutique values.</div>
-            <div class="cs-lbl">Organisational Shift</div><div class="cs-p">The success of this model was the catalyst for leadership to restructure my role into a 100% dedicated Talent Strategy function, moving from HR support to strategic growth ownership.</div>
-          </div>
+          <div class="cs"><div class="cs-n">01</div><div class="cs-t">Commercial Negotiation (The Quick Win)</div><div class="cs-lbl">Action</div><div class="cs-p">Negotiated standard vendor terms from 20% down to 15%.</div><div class="cs-lbl">Result</div><div class="cs-p">£45k saved in Year 1, establishing immediate credibility and proving that Talent Operations could actively protect the P&amp;L.</div></div>
+          <div class="cs"><div class="cs-n">02</div><div class="cs-t">Building Internal Engines (The Cultural Shift)</div><div class="cs-lbl">Action</div><div class="cs-p">Revived a stagnant internal referral programme and pivoted to organic, network-led sourcing with a minimal budget.</div><div class="cs-lbl">Result</div><div class="cs-p">Generated 28 leads and a 25% conversion rate, moving the culture away from agency-first thinking.</div></div>
+          <div class="cs"><div class="cs-n">03</div><div class="cs-t">Scaling the Direct Model (The Ownership)</div><div class="cs-lbl">Action</div><div class="cs-p">As headcount grew to 150+ and attrition reached 20%, I fully embedded a direct-sourcing model as a sole practitioner.</div><div class="cs-lbl">Result</div><div class="cs-p">Eliminated agency reliance for the majority of roles, supporting 30+ hires annually.</div></div>
+          <div class="cs"><div class="cs-n">04</div><div class="cs-t">The Bottom Line: Strategic Value Driver</div><div class="cs-lbl">Financial Impact</div><div class="cs-p">Delivered £300k+ in annual cost avoidance by replacing high-fee agencies with internal pipelines.</div><div class="cs-lbl">Operational Outcome</div><div class="cs-p">Enhanced cultural durability and candidate quality by leveraging internal referrals and organic network — ensuring hires were aligned with the agency's boutique values.</div><div class="cs-lbl">Organisational Shift</div><div class="cs-p">The success of this model was the catalyst for leadership to restructure my role into a 100% dedicated Talent Strategy function, moving from HR support to strategic growth ownership.</div></div>
         </div>
         <div class="case-refl">
           <div class="refl-lbl">Reflection</div>
@@ -505,7 +450,6 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
           <div class="refl-q">I lead by doing — turning ambiguity into a structured, self-sustaining path for growth.</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -538,9 +482,14 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
       <h2 class="contact-title">Get in Touch</h2>
       <p class="contact-statement">Open to opportunities across Talent Acquisition, Talent Partnering, and adjacent People functions — permanent or contract — where my experience can support a high-impact Talent practice.</p>
       <div class="contact-photo-row">
-       <div class="contact-photo">
-<img src="portrait.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%">
-</div>
+        <div class="contact-photo">
+          <img src="portrait.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%">
+        </div>
+        <div>
+          <div class="contact-name-big">Carolina França dos Anjos</div>
+          <div class="contact-title-sm">Talent Partner · London, UK</div>
+        </div>
+      </div>
       <a href="carolina-franca-cv.pdf" class="btn-white" download>Download CV</a>
     </div>
     <div class="contact-right">
