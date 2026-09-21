@@ -10,10 +10,8 @@
 :root{
   --orange:#E8622A;
   --orange-light:#F07A42;
-  --orange-pale:#FEF0E8;
   --ivory:#FDFAF6;
   --ivory-dark:#F5EFE6;
-  --sand:#EDE5D8;
   --ink:#141210;
   --mid:#4A3F36;
   --muted:#9C8C80;
@@ -49,6 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
 .btn-fill{font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--orange);color:#fff;padding:.8rem 1.8rem;text-decoration:none;transition:all .2s;display:inline-block}
 .btn-fill:hover{background:var(--ink)}
+.btn-dark{font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.8rem 1.8rem;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-dark:hover{background:var(--orange)}
 .btn-line{font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--ink);padding:.8rem 1.8rem;text-decoration:none;border:2px solid var(--ink);transition:all .2s;display:inline-block}
 .btn-line:hover{background:var(--ink);color:#fff}
 
@@ -62,7 +62,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 /* ABOUT */
 #about{background:var(--white)}
 .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.about-headline{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.35;color:var(--ink);margin-bottom:2rem}
 .about-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
 .pill{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);color:var(--mid);padding:.35rem .9rem}
 .about-facts{border-top:1px solid var(--rule)}
@@ -100,11 +99,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .skills-table td{font-size:.88rem;color:var(--mid);padding:1.1rem 1rem;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.65}
 .skills-table tr:hover td{background:var(--ivory-dark)}
 .skills-table td:first-child{font-family:'Syne',sans-serif;font-weight:600;font-size:.78rem;color:var(--ink)}
-.skills-table .scope-cell{font-size:.8rem;color:var(--orange);font-weight:400}
+.skills-table .scope-cell{font-size:.8rem;color:var(--orange)}
 .skills-table td ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
 .skills-table td ul li{font-size:.88rem;padding-left:1.2rem;position:relative}
 .skills-table td ul li::before{content:'—';position:absolute;left:0;color:var(--orange)}
 .skills-table .inf-cell{font-size:.85rem;font-style:italic;color:var(--mid)}
+
+/* HR EXPERIENCE */
+#hr-experience{background:var(--ivory)}
+.hr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:3rem}
+.hr-card{background:var(--white);padding:2.2rem 1.8rem}
+.hr-card-label{font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem}
+.hr-card-text{font-size:.88rem;color:var(--mid);line-height:1.7}
+.why-matters{background:var(--ink);padding:3.5rem;display:grid;grid-template-columns:200px 1fr;gap:3rem;align-items:center}
+.why-matters-label{font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.8rem}
+.why-matters-rule{width:40px;height:3px;background:var(--orange)}
+.why-matters-text{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:500;color:rgba(253,250,246,.8);line-height:1.7}
 
 /* IMPACT */
 #impact{background:var(--ivory-dark)}
@@ -142,8 +152,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;ali
 .contact-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1;letter-spacing:-.02em;color:#fff;margin-bottom:2rem}
 .contact-statement{font-family:'Syne',sans-serif;font-weight:500;font-size:clamp(.95rem,1.5vw,1.15rem);color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:2.5rem}
 .contact-photo-row{display:flex;align-items:center;gap:1.4rem;margin-bottom:2.5rem}
-.contact-photo{width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.45);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.contact-photo-hint{font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);text-align:center;line-height:1.5;padding:.5rem}
+.contact-photo{width:120px;height:120px;border-radius:50%;overflow:hidden;flex-shrink:0}
 .contact-name-big{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:#fff}
 .contact-title-sm{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:.3rem}
 .btn-white{font-family:'Syne',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:#fff;color:var(--orange);padding:.8rem 1.8rem;text-decoration:none;display:inline-block;transition:all .2s}
@@ -175,8 +184,8 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
   .sec-title{font-size:2rem}
   .hero-name{font-size:2.8rem}
   .hero-content{padding:8% 6%}
-  .skills-layout{grid-template-columns:1fr}
-  .evo-subtitle{font-size:.9rem}
+  .hr-grid{grid-template-columns:1fr 1fr}
+  .why-matters{grid-template-columns:1fr;gap:1.5rem;padding:2rem}
 }
 @media(max-width:600px){
   .case-steps{grid-template-columns:1fr}
@@ -199,6 +208,8 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
   .skills-table{font-size:.75rem}
   .skills-table th{font-size:.6rem;padding:.7rem .6rem}
   .skills-table td{padding:.8rem .6rem}
+  .hr-grid{grid-template-columns:1fr}
+  .why-matters{grid-template-columns:1fr;gap:1rem;padding:1.8rem}
 }
 </style>
 </head>
@@ -211,6 +222,7 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
     <li><a href="#about">About</a></li>
     <li><a href="#evolution">Journey</a></li>
     <li><a href="#skills-expanded">Skills</a></li>
+    <li><a href="#hr-experience">HR</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#values">Values</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -236,7 +248,7 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
     </div>
     <div class="hero-btns">
       <a href="#impact" class="btn-fill">View TA Case Studies</a>
-      <a href="#hr-experience" class="btn-fill" style="background:var(--ink)">HR Experience</a>
+      <a href="#hr-experience" class="btn-dark">HR Experience</a>
       <a href="carolina-franca-cv.pdf" class="btn-line" download>Download CV</a>
     </div>
   </div>
@@ -247,7 +259,7 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
   <div class="sec-inner">
     <div class="sec-head">
       <div class="sec-label">About</div>
-      <h2 class="sec-title">A Talent & HR professional with Brazilian warmth, <em style="color:var(--orange);font-style:normal">European</em> roots, and a London edge.</h2>
+      <h2 class="sec-title">A Talent &amp; HR professional with Brazilian warmth, <em style="color:var(--orange);font-style:normal">European</em> roots, and a London edge.</h2>
     </div>
     <div class="about-layout">
       <div>
@@ -284,7 +296,6 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
       <h2 class="sec-title">How My Work Evolved</h2>
     </div>
     <p class="evo-subtitle">An evolution from filling roles to shaping the people-centred systems that help teams thrive.</p>
-    <!-- Mobile timeline -->
     <div class="mobile-timeline">
       <div class="mt-item"><div class="mt-year">2009</div><div class="mt-title">Learning to Operate at Scale</div><div class="mt-desc">High-stakes, high-volume environments where quality couldn't slip.</div></div>
       <div class="mt-item"><div class="mt-year">2015</div><div class="mt-title">Choosing Depth Over Title</div><div class="mt-desc">Moving into Creative and Digital Product to deepen HR and Talent experience.</div></div>
@@ -292,7 +303,6 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
       <div class="mt-item"><div class="mt-year">2021</div><div class="mt-title">Scaling Without Losing Standards</div><div class="mt-desc">Protecting candidate experience and cultural consistency under intense delivery demands.</div></div>
       <div class="mt-item"><div class="mt-year">2023</div><div class="mt-title">Stabilising Force in Complexity</div><div class="mt-desc">Navigating global matrices, restructuring and offshore delivery with calm authority.</div></div>
     </div>
-    <!-- Desktop wave -->
     <div class="wave-scroll">
       <svg class="wave-svg" viewBox="0 0 1080 500" width="1080" height="500" xmlns="http://www.w3.org/2000/svg">
         <text x="280" y="60" text-anchor="middle" font-family="Syne,sans-serif" font-weight="700" font-size="11" fill="#E8622A" letter-spacing="1.5">CHOOSING</text>
@@ -386,17 +396,43 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
           <tr>
             <td>Senior Talent Partner — Candidate Experience<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Foolproof · Indigo Slate · Zensar · 2022–2023</span></td>
             <td class="scope-cell">Multi-region · Scale, systems, people</td>
-            <td><ul><li>Protected quality and candidate experience under sustained scaling pressure.</li>              <li>Turned hiring data into something managers could actually use, giving them clearer insight to make better decisions.</li><li>Mentored peers through leadership change.</li></ul></td>
+            <td><ul><li>Protected quality and candidate experience under sustained scaling pressure.</li><li>Turned hiring data into something managers could actually use, giving them clearer insight to make better decisions.</li><li>Mentored peers through leadership change.</li></ul></td>
             <td class="inf-cell">Stewardship, peer and stakeholder coaching.</td>
           </tr>
           <tr>
             <td>Senior Talent Partner — Global Enablement<br><span style="color:var(--muted);font-size:.78rem;font-weight:300">Foolproof · Zensar · 2023–2026</span></td>
-            <td class="scope-cell">Multi-region · High ambiguity · Staff-aug · Global matrices</td>
-            <td><ul><li>Operated effectively in ambiguity, often without formal briefs.</li>              <li>Built proactive, multi-region talent pipelines ensuring teams were ready to hire across multiple regions.</li>              <li>Provided stability and continuity during restructuring.</li></ul></td>
+            <td class="scope-cell">Multi-region · High ambiguity · Staff augmentation · Global matrices</td>
+            <td><ul><li>Operated effectively in ambiguity, often without formal briefs.</li><li>Built proactive, multi-region talent pipelines ensuring teams were ready to hire across multiple regions.</li><li>Provided stability and continuity during restructuring.</li></ul></td>
             <td class="inf-cell">Trust and calm authority.</td>
           </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- HR EXPERIENCE -->
+<section class="sec" id="hr-experience">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <div class="sec-label">Beyond Recruitment</div>
+      <h2 class="sec-title">HR Experience</h2>
+    </div>
+    <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:500;color:var(--mid);max-width:700px;line-height:1.7;margin-bottom:4rem">For several years, I held a dual HR + Talent remit, alongside my recruitment responsibilities. That meant being involved not just in hiring people, but in what happened before, during and after they joined — from payroll and benefits to employee relations, policies, systems and day-to-day people support.</p>
+    <div class="hr-grid">
+      <div class="hr-card"><div class="hr-card-label">Employee Relations</div><p class="hr-card-text">Supported managers and employees through long-term sickness, disciplinaries, end-of-probation dismissals, maternity and paternity planning, and return-to-work processes.</p></div>
+      <div class="hr-card"><div class="hr-card-label">HR Operations</div><p class="hr-card-text">Handled payroll collation alongside Finance, benefits and pension queries, right-to-work checks and day-to-day people administration.</p></div>
+      <div class="hr-card"><div class="hr-card-label">People Support</div><p class="hr-card-text">Acted as a first point of contact for employee and manager queries, including sensitive and confidential matters requiring discretion and sound judgement.</p></div>
+      <div class="hr-card"><div class="hr-card-label">HR Systems &amp; Processes</div><p class="hr-card-text">Worked with IRIS HR, supported system configuration and helped managers use HR processes and systems correctly.</p></div>
+      <div class="hr-card"><div class="hr-card-label">Policies &amp; Process</div><p class="hr-card-text">Helped build, maintain and improve people processes as the business grew, with a focus on making them practical, consistent and scalable.</p></div>
+      <div class="hr-card"><div class="hr-card-label">HR Reporting &amp; Governance</div><p class="hr-card-text">Maintained accurate HR records, supported payroll and ER documentation, monitored compliance across people processes, and carried out periodic audits to ensure accurate records and consistent policy application.</p></div>
+    </div>
+    <div class="why-matters">
+      <div>
+        <div class="why-matters-label">Why This Matters</div>
+        <div class="why-matters-rule"></div>
+      </div>
+      <p class="why-matters-text">My experience means I don't see recruitment and HR as separate worlds. I understand the hiring side — finding the right person and getting them through the door — but I've also experienced the realities of supporting people once they're there. That's the perspective I bring to People &amp; HR roles: practical, commercially aware and comfortable with both people and process.</p>
     </div>
   </div>
 </section>
@@ -414,7 +450,7 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
           <div>
             <div class="case-period">2023 – 2026</div>
             <h3 class="case-title">Scaling Global Staff-Augmentation<br>Reducing "Time-to-Land" from 6 to 3 weeks<br>with a 45-candidate global pipeline</h3>
-            <p class="case-challenge">In a global staff-aug model, a 6-week "Time-to-Land" created significant revenue risk. The business required a system to respond to client demands in days, not weeks, without compromising technical rigour.</p>
+            <p class="case-challenge">In a global staff augmentation model, a 6-week "Time-to-Land" created significant revenue risk. The business required a system to respond to client demands in days, not weeks, without compromising technical rigour.</p>
           </div>
           <div class="case-kpi"><div class="case-kpi-num">6→3</div><div class="case-kpi-label">weeks · time-to-land</div></div>
         </div>
@@ -452,61 +488,6 @@ footer{background:var(--ink);padding:2rem 5%;display:flex;justify-content:space-
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- HR EXPERIENCE -->
-<section class="sec" id="hr-experience">
-  <div class="sec-inner">
-    <div class="sec-head">
-      <div class="sec-label">Beyond Recruitment</div>
-      <h2 class="sec-title">HR Experience</h2>
-    </div>
-    <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:500;color:var(--mid);max-width:700px;line-height:1.7;margin-bottom:4rem">For several years, I held a dual HR + Talent remit, alongside my recruitment responsibilities. That meant being involved not just in hiring people, but in what happened before, during and after they joined — from payroll and benefits to employee relations, policies, systems and day-to-day people support.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:5rem">
-
-      <div style="background:var(--white);padding:2.2rem 1.8rem">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">Employee Relations</div>
-        <p style="font-size:.88rem;color:var(--mid);line-height:1.7">Supported managers and employees through long-term sickness, disciplinaries, end-of-probation dismissals, maternity and paternity planning, and return-to-work processes.</p>
-      </div>
-
-      <div style="background:var(--white);padding:2.2rem 1.8rem">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">HR Operations</div>
-        <p style="font-size:.88rem;color:var(--mid);line-height:1.7">Handled payroll collation alongside Finance, benefits and pension queries, right-to-work checks and day-to-day people administration.</p>
-      </div>
-
-      <div style="background:var(--white);padding:2.2rem 1.8rem">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">People Support</div>
-        <p style="font-size:.88rem;color:var(--mid);line-height:1.7">Acted as a first point of contact for employee and manager queries, including sensitive and confidential matters requiring discretion and sound judgement.</p>
-      </div>
-
-      <div style="background:var(--white);padding:2.2rem 1.8rem">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">HR Systems &amp; Processes</div>
-        <p style="font-size:.88rem;color:var(--mid);line-height:1.7">Worked with IRIS HR, supported system configuration and helped managers use HR processes and systems correctly.</p>
-      </div>
-
-      <div style="background:var(--white);padding:2.2rem 1.8rem">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">Policies &amp; Process</div>
-        <p style="font-size:.88rem;color:var(--mid);line-height:1.7">Helped build, maintain and improve people processes as the business grew, with a focus on making them practical, consistent and scalable.</p>
-      </div>
-
-      <div style="background:var(--white);padding:2.2rem 1.8rem">
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem">HR Reporting &amp; Governance</div>
-        <p style="font-size:.88rem;color:var(--mid);line-height:1.7">Maintained accurate HR records, supported payroll and ER documentation, monitored compliance across people processes, and carried out periodic audits to ensure accurate records and consistent policy application.</p>
-      </div>
-
-    </div>
-
-    <!-- Why this matters -->
-    <div style="background:var(--ink);padding:3.5rem;display:grid;grid-template-columns:200px 1fr;gap:3rem;align-items:center">
-      <div>
-        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.8rem">Why This Matters</div>
-        <div style="width:40px;height:3px;background:var(--orange)"></div>
-      </div>
-      <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:500;color:rgba(253,250,246,.8);line-height:1.7">My experience means I don't see recruitment and HR as separate worlds. I understand the hiring side — finding the right person and getting them through the door — but I've also experienced the realities of supporting people once they're there. That's the perspective I bring to People &amp; HR roles: practical, commercially aware and comfortable with both people and process.</p>
-    </div>
-
   </div>
 </section>
 
